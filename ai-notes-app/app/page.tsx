@@ -51,7 +51,10 @@ export default function Home() {
   return (
     <div className="max-w-3xl mx-auto p-6 bg-gray-50 min-h-screen">
       <h1 className="text-4xl font-bold mb-6 text-center text-blue-600">🌟 AI Notes</h1>
-
+      <p className="text-center text-gray-600 mb-6">
+        Write notes, save them, and use AI to improve, summarize, or translate your text.
+        Click on a note to analyze it or delete it when no longer needed.
+      </p>
       {/* Input */}
       <div className="mb-6">
         <textarea
@@ -60,12 +63,14 @@ export default function Home() {
           onChange={(e) => setText(e.target.value)}
           placeholder="Write your note here..."
         />
-        <button
-          onClick={saveNote}
-          className="mt-3 bg-blue-500 text-white py-2 px-6 rounded-xl shadow hover:bg-blue-600 transition"
-        >
-          Save Note
-        </button>
+        <div className="mt-3 flex md:justify-start justify-center">
+          <button
+            onClick={saveNote}
+            className="bg-blue-500 text-white py-2 px-6 rounded-xl shadow hover:bg-blue-600 transition"
+          >
+            Save Note
+          </button>
+        </div>
       </div>
 
       {/* Notes */}
@@ -83,7 +88,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex gap-2 mt-2">
+            <div className="flex gap-2 mt-2 flex md:justify-start justify-center">
               <button
                 className="bg-blue-500 text-white py-1 px-4 rounded-lg text-sm hover:bg-blue-600 transition"
                 onClick={() => setSelectedNote(note)}
